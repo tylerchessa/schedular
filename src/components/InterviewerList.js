@@ -1,7 +1,7 @@
 import React from "react";
 import InterviewerListItem from "./InterviewerListItem";
 import "./InterviewerList.scss"
-import classNames from "classnames";
+
 
 function InterviewerList(props) {
   const interviewerArray = props.interviewers ? 
@@ -11,7 +11,7 @@ function InterviewerList(props) {
     name={interviewer.name}
     avatar={interviewer.avatar}
     selected={interviewer.id === props.interviewer}
-    setInterviewer={props.setInterviewer}
+    setInterviewer={() => {props.setInterviewer(interviewer.id)}}
     />
   }) : [];
 
