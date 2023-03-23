@@ -12,7 +12,7 @@ const interview = props.interview ? <Show student={props.interview.student} inte
 
   return (
     <article className="appointment">
-      <header>{props.time}</header>
+      <Header>{props.time}</Header>
       {interview}
     </article>
   )
