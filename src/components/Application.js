@@ -4,7 +4,7 @@ import DayList from "./DayList";
 import "components/Appointment"
 import Appointment from "components/Appointment";
 import axios from "axios";
-import { getAppointmentsForDay } from "helpers/selectors";
+import { getAppointmentsForDay, getInterviewersForDay } from "helpers/selectors";
 
 
 
@@ -27,6 +27,7 @@ export default function Application(props) {
     })
   }, [])
   const dailyAppointments = getAppointmentsForDay(state, state.day)
+  const dailyInterviewers = getInterviewersForDay(state, state.days)
 
   return (
     <main className="layout">
@@ -54,9 +55,10 @@ export default function Application(props) {
           key={appointment.id}
           id={appointment.id}
           time={appointment.time}
-          interview={appointment.interview} />
+          interview={appointment.interview}
+           />
         })}
-        <Appointment key="last" time="5pm" />
+        <Appointment key="last" time="5pm" interviewers={dailyInterviewers}/>
       </section>
     </main>
   );

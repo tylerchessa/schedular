@@ -1,3 +1,4 @@
+import Appointment from "components/Appointment";
 import React from "react"
 
 function getAppointmentsForDay(state, days) {
@@ -23,4 +24,16 @@ function getInterview(state, interview) {
 }
 }
 
-export { getAppointmentsForDay, getInterview };
+function getInterviewersForDay(state, days) {
+  console.log(state.days)
+  const filterDays = state.days.filter(day => day.name === days)
+  if (filterDays.length < 1) {
+    return []
+  }
+  const filteredInteviewers = filterDays[0].interviewers.map(interviewerKey => state.interviewers[interviewerKey])
+  
+  return filteredInteviewers
+    
+}
+
+export { getAppointmentsForDay, getInterview, getInterviewersForDay};

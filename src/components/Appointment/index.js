@@ -5,6 +5,7 @@ import Show from "./Show";
 import Empty from "./Empty";
 import Form from "./Form";
 import useVisualMode from "hooks/useVisualMode";
+import { getAppointmentsForDay, getInterviewersForDay } from "helpers/selectors";
 
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";
@@ -17,6 +18,8 @@ function Appointment(props) {
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
+
+//  const dailyInterviewers = getInterviewersForDay(state, state.days)
 
   return (
     <article className="appointment">
