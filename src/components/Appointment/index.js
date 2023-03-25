@@ -5,7 +5,7 @@ import Show from "./Show";
 import Empty from "./Empty";
 import Form from "./Form";
 import useVisualMode from "hooks/useVisualMode";
-import { getAppointmentsForDay, getInterviewersForDay } from "helpers/selectors";
+
 
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";
@@ -20,13 +20,12 @@ function Appointment(props) {
   );
 
 //  const dailyInterviewers = getInterviewersForDay(state, state.days)
-
   return (
     <article className="appointment">
       <Header time={props.time} />
       {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
       {mode === SHOW && (<Show student={props.interview.student} interviewer={props.interview.interviewer} />)}
-      {mode === CREATE && <Form interviewers={[]} onCancel={() => back()} />}
+      {mode === CREATE && <Form interviewers={props.interviewers} onCancel={() => back()} />}
     </article>
   );
 }

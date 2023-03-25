@@ -27,7 +27,7 @@ export default function Application(props) {
     })
   }, [])
   const dailyAppointments = getAppointmentsForDay(state, state.day)
-  const dailyInterviewers = getInterviewersForDay(state, state.days)
+  const dailyInterviewers = getInterviewersForDay(state, state.day)
 
   return (
     <main className="layout">
@@ -56,9 +56,10 @@ export default function Application(props) {
           id={appointment.id}
           time={appointment.time}
           interview={appointment.interview}
+          interviewers={[dailyInterviewers]}
            />
         })}
-        <Appointment key="last" time="5pm" interviewers={dailyInterviewers}/>
+        <Appointment key="last" time="5pm" interviewers={[dailyInterviewers]}/>
       </section>
     </main>
   );
