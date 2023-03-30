@@ -1,8 +1,7 @@
 import React from "react";
 
-function Show(props) {
-  console.log(props.interviewer)
-  console.log('props', props)
+function Show(props) {  
+  console.log(props.interviewer.name)
   return (
     <main className="appointment__card appointment__card--show">
       <section className="appointment__card-left">
