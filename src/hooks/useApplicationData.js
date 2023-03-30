@@ -76,6 +76,7 @@ function useApplicationData() {
     // return newDayArray;
 
   function bookInterview(id, interview) {
+    console.log(interview)
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview }

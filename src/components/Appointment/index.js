@@ -21,8 +21,6 @@ const ERROR_SAVE ="ERROR_SAVE"
 const ERROR_DELETE ="ERROR_DELETE"
 
 function Appointment(props) {
-
-  // const interview = props.interview ? <Show student={props.interview.student} interviewer={props.interview.interviewer}/> : <Empty />
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY 
   );
