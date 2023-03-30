@@ -21,3 +21,8 @@ npm test
 ```sh
 npm run storybook
 ```
+
+![interview-schedular](https://raw.githubusercontent.com/tylerchessa/schedular/d94f4fcf2081b535eeb1c1514ca39ec56353b198/docs/userPhotos/interviewSchedularPreview.png)
+
+![delete-edit-create](https://raw.githubusercontent.com/tylerchessa/schedular/d94f4fcf2081b535eeb1c1514ca39ec56353b198/docs/userPhotos/deleteEditCreatePreview.png)
+
