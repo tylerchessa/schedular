@@ -59,12 +59,13 @@ function Form(props) {
           value={interviewer}
           interviewers={props.interviewers}
           onChange={setInterviewer}
+          interviewer={interviewer}
         />
       </section>
       <section className="appointment__card-right">
         <section className="appointment__actions">
           <Button danger onClick={cancel}>Cancel</Button>
-          <Button confirm onClick={() => validate()}>Save</Button>
+          <Button confirm onClick={validate}>Save</Button>
         </section>
       </section>
     </main>

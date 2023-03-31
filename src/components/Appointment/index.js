@@ -61,7 +61,7 @@ function Appointment(props) {
       {mode === CREATE && <Form interviewers={props.interviewers} onSave={save} onCancel={back} />}
       {mode === CONFIRM && <Confirm message={"Are you sure you would like to delete?"} onConfirm={cancel} onCancel={back} />}
       {mode === DELETING && <Status message={"deleting"} />}
-      {mode === EDIT && <Form interviewers={props.interviewers} interviewer={props.interview.interviewer} student={props.interview.student} onSave={save} onCancel={back} />}
+      {mode === EDIT && <Form interviewers={props.interviewers} interviewer={props.interview.interviewer.id} student={props.interview.student} onSave={save} onCancel={back} />}
       {mode === ERROR_SAVE && <Error message={"Could not save"} onClose={back} />}
       {mode === ERROR_DELETE && <Error message={"Could not delete"} onClose={back} />}
     </article>
